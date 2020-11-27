@@ -12,18 +12,15 @@ func getRate(fromCurrency rate:String)-> Double?{
 
          var i = 0
          while isValidChar(for: content[content.index(startIndex, offsetBy:i)]) {
-            // print("is valid for char \(content[content.index(startIndex, offsetBy:i)])")
             i += 1
          }
          let subString =  content[startIndex..<content.index(startIndex, offsetBy: i)]
-         // print(subString)
-         // print(type(of:subString))
          if let _number = Double(subString){
             return _number
          }
       }
    }catch _{
-      print("error")
+      print("cannot read String from URL!")
    }
    return nil
 }
